@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B2Verify — UK Business Verification</title>
+  <meta name="description" content="UK business verification from Companies House records, director networks and filing history. Launching soon.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #132528;
+      --lime: #bdff69;
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.55);
+      --line: rgba(255, 255, 255, 0.12);
+      --field: rgba(255, 255, 255, 0.06);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Bai Jamjuree", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .glow {
+      position: fixed; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 90% 60% at 50% -10%, #1e4a4f 0%, transparent 70%);
+    }
+    .wrap { position: relative; width: 100%; max-width: 56rem; margin: 0 auto; padding: 0 1.25rem; }
+    header { padding: 1.5rem 0; }
+    .wordmark { display: inline-flex; align-items: baseline; font-size: 1.75rem; letter-spacing: -0.04em; text-decoration: none; }
+    .wordmark .b { font-weight: 700; color: var(--text); }
+    .wordmark .two { font-weight: 400; color: var(--lime); }
+    .wordmark .v { font-weight: 300; color: var(--text); }
+    main { flex: 1; padding: 2.5rem 0 4rem; }
+    .pill {
+      display: inline-block; margin-bottom: 1.5rem; padding: 0.35rem 0.8rem;
+      border: 1px solid rgba(189, 255, 105, 0.35); border-radius: 999px;
+      color: var(--lime); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    h1 { margin: 0 0 1.25rem; line-height: 1; letter-spacing: -0.03em; }
+    h1 span { display: block; }
+    h1 .l1 { font-size: clamp(2.6rem, 9vw, 4.5rem); font-weight: 700; }
+    h1 .l2 { font-size: clamp(3rem, 11vw, 5.5rem); font-weight: 700; color: var(--lime); margin-top: 0.3rem; }
+    .lede { max-width: 38rem; margin: 0 0 2.5rem; color: var(--muted); font-size: 1.15rem; line-height: 1.6; }
+    form { max-width: 38rem; display: grid; gap: 0.75rem; }
+    .row { display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+    @media (min-width: 640px) { .row { grid-template-columns: 1fr 1fr; } }
+    label { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.35rem; }
+    input, textarea {
+      width: 100%; padding: 0.8rem 1rem; border-radius: 0.5rem;
+      border: 1px solid var(--line); background: var(--field); color: var(--text);
+      font: inherit; font-size: 1rem; outline: none;
+    }
+    textarea { min-height: 8rem; resize: vertical; }
+    input:focus, textarea:focus { border-color: var(--lime); box-shadow: 0 0 0 1px var(--lime); }
+    button {
+      justify-self: start; margin-top: 0.5rem; padding: 0.85rem 1.75rem; border: 0; border-radius: 0.5rem;
+      background: var(--lime); color: var(--bg); font: inherit; font-size: 1rem; font-weight: 700; cursor: pointer;
+    }
+    button:hover { filter: brightness(1.05); }
+    .note { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.85rem; }
+    .note a { color: var(--lime); }
+    footer { border-top: 1px solid var(--line); padding: 2rem 0 2.5rem; text-align: center; }
+    .parent { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.75rem 1rem; margin-bottom: 1.5rem; }
+    .parent p { margin: 0; color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; }
+    .parent img { height: 4.5rem; width: auto; opacity: 0.9; }
+    .fine { margin: 0.35rem 0; color: rgba(255, 255, 255, 0.45); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+
+  <header>
+    <div class="wrap">
+      <span class="wordmark" aria-label="B2Verify"><span class="b">B</span><span class="two">2</span><span class="v">Verify</span></span>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <span class="pill">Launching soon</span>
+      <h1><span class="l1">UK Business</span><span class="l2">Verification</span></h1>
+      <p class="lede">
+        We are getting B2Verify ready for launch: company checks built on Companies House
+        records, director networks and filing history. Tell us what you need and we will be in touch.
+      </p>
+
+      <form id="enquiry" novalidate>
+        <div class="row">
+          <div><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div><label for="company">Company</label><input id="company" name="company" autocomplete="organization"></div>
+        </div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div>
+        <button type="submit">Send Request</button>
+        <p class="note">This opens your email app with the message ready to send to
+          <a href="mailto:b2verify@tr2uk.com?subject=B2Verify%20enquiry">b2verify@tr2uk.com</a>.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="parent">
+        <span class="wordmark" aria-label="B2Verify"><span class="b">B</span><span class="two">2</span><span class="v">Verify</span></span>
+        <p>is a trading name of</p>
+        <img src="tr2uk-logo.png" alt="TR2UK" width="271" height="224">
+      </div>
+      <p class="fine">© 2026 B2Verify. All rights reserved.</p>
+      <p class="fine">All data sourced from public UK registers. Not financial, legal, or professional investment advice.</p>
+    </div>
+  </footer>
+
+  <script>
+    // No backend: the form becomes a ready-made email in the visitor's own mail app.
+    document.getElementById("enquiry").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = e.target;
+      if (!f.reportValidity()) return;
+      var v = function (id) { return document.getElementById(id).value.trim(); };
+      var body =
+        "Name: " + v("name") + "\n" +
+        "Company: " + v("company") + "\n" +
+        "Email: " + v("email") + "\n\n" +
+        v("message") + "\n";
+      window.location.href = "mailto:b2verify@tr2uk.com?subject=" +
+        encodeURIComponent("B2Verify enquiry") + "&body=" + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>
